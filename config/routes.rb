@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :clinics, only: [:index, :show, :update, :destroy]
 
+  mount API::Base, at: "/"
+  
   root to: "pages#home"
 end
