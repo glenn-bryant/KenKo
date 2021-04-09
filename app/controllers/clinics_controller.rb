@@ -1,5 +1,7 @@
+
 class ClinicsController < ApplicationController
   def index
+    @clinics = Clinic.all
   end
 
   def show
