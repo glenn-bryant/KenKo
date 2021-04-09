@@ -7,4 +7,5 @@ class Clinic < ApplicationRecord
   validates :address, presence: true
   validates :eng_op, presence: true
   validates :category, presence: true
+  validates :website, presence: true
 end

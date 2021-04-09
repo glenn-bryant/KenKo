@@ -1,2 +1,12 @@
 <h1>Clinics#index</h1>
-<p>Find me in app/views/clinics/index.html.erb</p>
+<% @clinics.each do |clinic| %>
+  <%= clinic.name %>
+  <%= clinic.telephone %>
+  <%= clinic.hours %>
+  <%= clinic.address %>
+  <%= clinic.eng_op %>
+  <%= clinic.category %>
+  <%= clinic.website %>
+  <hr>  
+  <br> 
+<% end %>
