@@ -1,12 +1,12 @@
 <h1>Clinics#index</h1>
 <% @clinics.each do |clinic| %>
-  <%= clinic.name %>
-  <%= clinic.telephone %>
-  <%= clinic.hours %>
-  <%= clinic.address %>
-  <%= clinic.eng_op %>
-  <%= clinic.category %>
-  <%= clinic.website %>
+  <p><%= link_to clinic.name, clinic_path(clinic) %>
+  Telephone: <%= clinic.telephone %>
+  Hours: <%= clinic.hours %>
+  Address: <%= clinic.address %>
+  English Operator: <%= clinic.eng_op %>
+  Category: <%= clinic.category %>
+  Website: <%= clinic.website %></p>
   <hr>  
   <br> 
 <% end %>

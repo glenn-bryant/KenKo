@@ -5,6 +5,7 @@ class ClinicsController < ApplicationController
   end
 
   def show
+    @clinic = Clinic.find(params[:id])
   end
 
   def update
@@ -18,4 +19,11 @@ class ClinicsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def clinic_params
+    params.require(:clinic).permit(:name)
+  end
+
 end
