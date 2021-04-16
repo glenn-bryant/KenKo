@@ -25,9 +25,18 @@ glenn = User.create!(
 
 puts 'user created!'
 
-file = HTTParty.get('https://japan-clinic-api.herokuapp.com/api/v1/clinics')
-clinic_hash = JSON.parse(file.body)
+# HTTParty.get("https://japan-clinic-api.herokuapp.com/api/v1/clinics", headers: {"Authorization" => "Token token=\"JBfLXceeM--sSsxgyzF-\""})
 
+headers = { 
+  "authentication_token" => "JBfLXceeM--sSsxgyzF-" 
+}
+
+file = HTTParty.get('https://japan-clinic-api.herokuapp.com/api/v1/clinics', headers: headers)
+
+p file 
+
+clinic_hash = JSON.parse(file.body)
+p clinic_hash
 puts 'creating clinics...'
 
 clinic_hash.each do |clinic|
