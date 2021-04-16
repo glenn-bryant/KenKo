@@ -48,7 +48,7 @@ clinic_hash.each do |clinic|
     address: clinic['address'],
     eng_op: clinic['eng_op'],
     category: clinic['category'],
-    website: 'default'
+    website: clinic['website']
   )
 end
 
