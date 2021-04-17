@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # if Rails.env.production?
       @location = Mapbox::Geocoder.geocode_forward("Tokyo-to, nerima-ku, nakamura-minami 1-22-18")
-      raise
+      @mapbox_location = @location[0]["features"][0]["bbox"]
     # end  
   end
 
