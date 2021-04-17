@@ -4,9 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     if Rails.env.production?
       @user.location = request.location.country
-    end
+    end  
   end
 
   def update
