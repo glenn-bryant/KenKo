@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
 
   def show
+    if Rails.env.production?
+      @user.location = request.location.country
+    end
   end
 
   def update
