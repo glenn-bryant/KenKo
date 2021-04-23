@@ -6,6 +6,7 @@ ruby '2.6.6'
 # gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'httparty'
+gem 'mapbox-sdk'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.6'
 # Use postgresql as the database for Active Record
