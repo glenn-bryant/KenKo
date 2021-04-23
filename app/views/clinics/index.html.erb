@@ -1,12 +1,14 @@
 <h1>Clinics#index</h1>
 <% @clinics.each do |clinic| %>
-  <%= clinic.name %>
+  <%= link_to clinic.name, clinic_path(clinic) %>
   <%= clinic.telephone %>
   <%= clinic.hours %>
   <%= clinic.address %>
   <%= clinic.eng_op %>
   <%= clinic.category %>
   <%= clinic.website %>
+  <p>Coordinates: <%= clinic.latitude %></p>
+  <p>Coordinates:<%= clinic.longitude %> </p>
   <hr>  
   <br> 
 <% end %>

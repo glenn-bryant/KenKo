@@ -33,10 +33,10 @@ headers = {
 
 file = HTTParty.get('https://japan-clinic-api.herokuapp.com/api/v1/clinics', headers: headers)
 
-p file 
+# p file 
 
 clinic_hash = JSON.parse(file.body)
-p clinic_hash
+# p clinic_hash
 puts 'creating clinics...'
 
 clinic_hash.each do |clinic|
