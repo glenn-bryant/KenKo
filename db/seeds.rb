@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'httparty'
 
+require "mapbox-sdk"
+
+Mapbox.access_token = "pk.eyJ1IjoiZ2dsZW5uODgiLCJhIjoiY2tuaGM5MDBzMHpqejJubndudTZ0Z2JtdCJ9.-qhIHeDpFXTkRntOn204uA"
+
 puts 'deleting database...'
 Clinic.destroy_all
 User.destroy_all
@@ -33,10 +37,10 @@ headers = {
 
 file = HTTParty.get('https://japan-clinic-api.herokuapp.com/api/v1/clinics', headers: headers)
 
-p file 
+ p file 
 
 clinic_hash = JSON.parse(file.body)
-p clinic_hash
+ p clinic_hash
 puts 'creating clinics...'
 
 clinic_hash.each do |clinic|
@@ -48,8 +52,19 @@ clinic_hash.each do |clinic|
     address: clinic['address'],
     eng_op: clinic['eng_op'],
     category: clinic['category'],
-    website: clinic['website']
+    website: clinic['website'],
   )
+
+  @clinics = Clinic.all
+  @clinics.each do |clinica|
+    location = Mapbox::Geocoder.geocode_forward(clinica.address)
+    mapbox_location =  location[0]["features"][0]["geometry"]["coordinates"]
+
+    clinica["latitude"] = mapbox_location[1]
+    clinica.save
+    clinica["longitude"] = mapbox_location[0]
+    clinica.save
+  end
 end
 
 puts 'clinics created!'
