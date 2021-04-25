@@ -7,6 +7,9 @@ class ClinicsController < ApplicationController
   end
 
   def show
+    @clinic = Clinic.find(params[:id])
+    # if Rails.env.production?
+
   end
 
   def update
