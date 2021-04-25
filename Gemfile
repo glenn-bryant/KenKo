@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 # gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
+gem 'geocode'
 gem 'httparty'
 gem 'mapbox-sdk'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

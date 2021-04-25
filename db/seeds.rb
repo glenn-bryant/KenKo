@@ -26,6 +26,13 @@ glenn = User.create!(
   email: "glennbryant3@gmail.com",
   password: "123456"
 )
+location = Mapbox::Geocoder.geocode_forward("Tokyo-to, nerima-ku, nakamura-minami 1-22-18")
+mapbox_location = location[0]["features"][0]["bbox"]
+
+glenn["latitude"] = mapbox_location[1]
+glenn.save
+glenn["longitude"] = mapbox_location[0]
+glenn.save
 
 puts 'user created!'
 
