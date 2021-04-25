@@ -9,10 +9,6 @@ class ClinicsController < ApplicationController
   def show
     @clinic = Clinic.find(params[:id])
     # if Rails.env.production?
-    @location = Mapbox::Geocoder.geocode_forward(@clinic.address)
-    @mapbox_location = @location[0]["features"][0]["bbox"]
-    @clinic.latitude = @mapbox_location[1]
-    @clinic.longitude = @mapbox_location[0]
 
   end
 
