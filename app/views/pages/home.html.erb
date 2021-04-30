@@ -1,5 +1,9 @@
 <h1>KenKo, your guide to English-speaking clinics in Tokyo!</h1>
 
+<button id = "find-me">Show my location</button><br/>
+<p id = "status"></p>
+<a id = "map-link" target="_blank"></a>
+
 <% if user_signed_in?%>
   <%= link_to "profile", user_path(current_user) %>
   <%= @user.latitude %>
