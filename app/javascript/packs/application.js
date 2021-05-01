@@ -3,8 +3,8 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start()
 require("turbolinks").start()
+require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
@@ -15,3 +15,14 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+ 
+
+import { geoFindMe } from '../components/geolocator';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2();
+  if (document.querySelector('#find-me')) {
+    geoFindMe();
+  }
+}); 
