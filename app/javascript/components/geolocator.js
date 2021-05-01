@@ -28,4 +28,6 @@ function geoFindMe() {
 
 }
 
-document.querySelector('#find-me').addEventListener('click', geoFindMe);
+// document.querySelector('#find-me').addEventListener('click', geoFindMe);
+
+export { geoFindMe }
