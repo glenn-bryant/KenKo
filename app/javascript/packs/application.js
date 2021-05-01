@@ -22,7 +22,7 @@ import { geoFindMe } from '../components/geolocator';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  if (document.querySelector('#find-me')) {
+  if (document.querySelector('#find-me').addEventListener('click', geoFindMe)) {
     geoFindMe();
   }
 }); 
