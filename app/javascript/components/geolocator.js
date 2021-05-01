@@ -10,8 +10,8 @@ function geoFindMe() {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    // status.textContent = '';
-    // mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+     status.textContent = '';
+     // mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
   }
 
@@ -22,7 +22,7 @@ function geoFindMe() {
   if(!navigator.geolocation) {
     status.textContent = 'Geolocation is not supported by your browser';
   } else {
-    // status.textContent = 'Locating…';
+     status.textContent = 'Locating…';
     navigator.geolocation.getCurrentPosition(success, error);
   }
 
