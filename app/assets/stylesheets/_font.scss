@@ -1,0 +1,35 @@
+h1 {
+  color: black;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  justify-content: center;
+}
+
+h2, h3, h4, h5, h6 {
+  color: gray;
+  font-family: 'Oxygen', sans-serif;
+  hyphens: auto;
+}
+
+p {
+  color: black;
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  line-height: 26px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:active {
+  color: lightblue;
+}
