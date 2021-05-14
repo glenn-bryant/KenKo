@@ -1,18 +1,28 @@
 h1 {
-  color: black;
+  color: $wintergreen-dream;
   font-family: 'Oxygen', sans-serif;
   font-weight: bold;
   justify-content: center;
 }
 
+h1.home {
+  font-size: 96px;
+  font-weight: bold;
+}
+
 h2, h3, h4, h5, h6 {
-  color: gray;
+  color: $wintergreen-dream;
   font-family: 'Oxygen', sans-serif;
   hyphens: auto;
 }
 
+h2.home {
+  color: $jet;
+  font-size: 30px;
+}
+
 p {
-  color: $congo-pink;
+  color: $jet;
   font-family: 'Noto Serif', serif;
   font-size: 18px;
   line-height: 26px;
@@ -32,4 +42,30 @@ a:hover {
 
 a:active {
   color: lightblue;
+}
+
+body {
+  background-color: $snow;
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-container, .logo-container, .search-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-around;
 }
