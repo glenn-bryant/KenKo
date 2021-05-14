@@ -18,10 +18,11 @@ require("channels")
  
 
 import { geoFindMe } from '../components/geolocator';
+import { initSelect2 } from './plugins/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  initSelect2();
   if (document.querySelector('#find-me').addEventListener('click', geoFindMe)) {
     geoFindMe();
   }
