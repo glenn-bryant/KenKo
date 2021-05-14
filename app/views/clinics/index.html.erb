@@ -9,7 +9,19 @@
   <%= clinic.website %>
   <p>Latitude: <%= clinic.latitude %></p>
   <p>Longitude: <%= clinic.longitude %></p>
-
+  <div class="favorite" id="favprote-<%= clinic.id %>">
+    <% if clinic.favorited?(current_user) %>
+      <%= link_to favorite_path( clinic.favorites.find_by(user:current_user)), method: :delete, remote: true do%>
+      <i class="fas fa-heart fa-sm"></i>
+      <p class="m-0 p-0"><%= clinics.favorites.count %></p>
+      <% end %>
+    <% else %>
+      <%= link_to clinics_favorites_path([clinic, @favorite]), method: :post, remote: true do%>
+        <i class="far fa-heart fa-sm"></i>
+        <p class="m-0 p-0"><%= clinic.favorites.count %></p>
+      <% end %>
+    <% end %>
+  </div>
   <hr>  
   <br> 
 <% end %>
