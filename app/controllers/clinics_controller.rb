@@ -3,7 +3,12 @@ Mapbox.access_token = "pk.eyJ1IjoiZ2dsZW5uODgiLCJhIjoiY2tuaGM5MDBzMHpqejJubndudT
 
 class ClinicsController < ApplicationController
   def index
-    @clinics = Clinic.all
+    if params[:query].present?
+      sql_query = "address ILIKE :query OR category ILIKE :query"
+      @clinics = Clinic.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @clinics = Clinic.all
+    end
   end
 
   def show
