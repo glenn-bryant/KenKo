@@ -1,29 +1,37 @@
-<h1>KenKo</h1>
-
-<h2>Your guide to English-speaking clinics in Tokyo</h2>
-
-<button id = "find-me">Show my location</button><br/>
-<p id = "status"></p>
- <a id = "map-link" target="_blank"></a> 
-
-<select class="select2" name="country">
-  <option value="AL">Alabama</option>
-  <option value="WY">Wyoming</option>
-</select>
-
-<%= form_tag clinics_path, method: :get do %>
+<section id="section">
+  <div class="top-container">
+    <div class="row">
+      <h1 class="home">Kenko</h1>
+    </div>
+    <div class="row">
+      <h2 class="home">Find English-speaking clinics in Tokyo</h2>
+    </div>
+  </div>
+  <div class="logo-container">
+    <%= image_tag "kenko-logo.png", :alt => "Kenko logo of a smartphone", :width => 300 %>
+  </div>
+  <div class="search-container">
+    <div class="row">
+      <button id = "find-me">Show my location</button><br/>
+      <p id = "status"></p>
+       <a id = "map-link" target="_blank"></a> 
+      <select class="select2" name="country">
+        <option value="AL">Alabama</option>
+        <option value="WY">Wyoming</option>
+      </select>
+      <%= form_tag clinics_path, method: :get do %>
         <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Type something!"
-    %>
+          params[:query],
+          class: "form-control",
+          placeholder: "Type something!"
+          %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
-
-<% if user_signed_in?%>
-  <%= link_to "profile", user_path(current_user) %>
-  <%= @user.latitude %>
-  <%= @user.longitude %>
-<% end %>
-
-<p>Testing</p>
+      <% if user_signed_in?%>
+        <%= link_to "profile", user_path(current_user) %>
+        <%= @user.latitude %>
+        <%= @user.longitude %>
+      <% end %>
+    </div>
+  </div>
+</section>
