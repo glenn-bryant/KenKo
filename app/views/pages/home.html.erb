@@ -13,12 +13,8 @@
   <div class="search-container">
     <div class="row">
       <button id = "find-me">Show my location</button><br/>
-      <p id = "status"></p>
-       <a id = "map-link" target="_blank"></a> 
-      <select class="select2" name="country">
-        <option value="AL">Alabama</option>
-        <option value="WY">Wyoming</option>
-      </select>
+      <%#p id = "status"></p%>
+      <%#a id = "map-link" target="_blank"></a%> 
       <%= render 'shared/search' %>
       <% if user_signed_in?%>
         <%= link_to "profile", user_path(current_user) %>
