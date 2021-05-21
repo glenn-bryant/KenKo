@@ -3,3 +3,14 @@
 <p>Find me in app/views/clinics/show.html.erb</p>
 <p>latitude: <%= @clinic.latitude %> </p>
 <p>longitude: <%= @clinic.longitude %> </p>
+
+<%= button_to 'Like', clinic_likes_path(@clinic), method: :post %>
+
+<p><%= @clinic.likes.count %> <%= (@clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+<% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', clinic_likes_path(@clinic, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', clinic_likes_path(@clinic), method: :post %>
+<% end %>

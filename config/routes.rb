@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :clinics, only: [:new, :create]
   end
 
-  resources :clinics, only: [:index, :show, :update, :destroy]
+  resources :clinics, only: [:index, :show, :update, :destroy] do 
+    resources :likes, only: [:new, :create]
+  end
+
+  resources :likes, only: [:destroy]
 
   root to: "pages#home"
 end
