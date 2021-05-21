@@ -16,11 +16,7 @@
       <%#p id = "status"></p%>
       <%#a id = "map-link" target="_blank"></a%> 
       <%= render 'shared/search' %>
-      <% if user_signed_in?%>
-        <%= link_to "profile", user_path(current_user) %>
-        <%= @user.latitude %>
-        <%= @user.longitude %>
-      <% end %>
+      
     </div>
   </div>
 </section>

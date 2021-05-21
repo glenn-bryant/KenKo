@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_23_054808) do
+ActiveRecord::Schema.define(version: 2021_05_21_083024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,26 @@ ActiveRecord::Schema.define(version: 2021_04_23_054808) do
     t.string "website"
     t.float "latitude"
     t.float "longitude"
+    t.boolean "favorite", default: false
     t.index ["user_id"], name: "index_clinics_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "clinic_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["clinic_id"], name: "index_favorites_on_clinic_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "clinic_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["clinic_id"], name: "index_likes_on_clinic_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +68,8 @@ ActiveRecord::Schema.define(version: 2021_04_23_054808) do
   end
 
   add_foreign_key "clinics", "users"
+  add_foreign_key "favorites", "clinics"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "likes", "clinics"
+  add_foreign_key "likes", "users"
 end
