@@ -60,6 +60,7 @@ clinic_hash.each do |clinic|
     eng_op: clinic['eng_op'],
     category: clinic['category'],
     website: clinic['website'],
+    favorite: false
   )
 
   @clinics = Clinic.all
@@ -70,6 +71,8 @@ clinic_hash.each do |clinic|
     clinica["latitude"] = mapbox_location[1]
     clinica.save
     clinica["longitude"] = mapbox_location[0]
+    clinica.save
+    clinica["favorite"] = false
     clinica.save
   end
 end

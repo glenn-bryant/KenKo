@@ -17,15 +17,19 @@ class ClinicsController < ApplicationController
 
   end
 
-  def update
+  def favorite!
+    self.favorite = true
+    self.save!
   end
 
-  def new
+  def unfavorite!
+    self.favorite = false
+    self.save!
   end
 
-  def create
-  end
+  private
 
-  def destroy
+  def clinic_params
+    params.require(:clinic).permit(:favorite)
   end
 end
