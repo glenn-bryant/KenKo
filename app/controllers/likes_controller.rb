@@ -10,24 +10,26 @@ class LikesController < ApplicationController
     end
     redirect_to clinic_path(@clinic)
   end
+ 
+  def find_like
+    @like = @clinic.likes.find(params[:id])
+  end
 
   def destroy
     if !(already_liked?)
       flash[:notice] = "Cannot unlike"
     else
+      @like = Like.find(params[:id])
       @like.destroy
     end
     redirect_to clinic_path(@clinic)
   end
 
-  def find_like
-    @like = @clinic.likes.find(params[:id])
-  end
 
   private
 
   def find_clinic
-    @clinic = Clinic.find(params[:clinic_id])
+    @clinic = Clinic.find_by_id(:id)
   end
 
   def already_liked?
