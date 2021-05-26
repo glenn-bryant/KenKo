@@ -2,6 +2,7 @@ require "mapbox-sdk"
 Mapbox.access_token = "pk.eyJ1IjoiZ2dsZW5uODgiLCJhIjoiY2tuaGM5MDBzMHpqejJubndudTZ0Z2JtdCJ9.-qhIHeDpFXTkRntOn204uA"
 
 class ClinicsController < ApplicationController
+  acts_as_votable
   def index
     if params[:query].present?
       sql_query = "address ILIKE :query OR category ILIKE :query"
