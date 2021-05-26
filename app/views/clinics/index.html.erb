@@ -1,17 +1,24 @@
-<%= render 'shared/search' %>
-<h1>Clinics#index</h1>
-<% @clinics.each do |clinic| %>
-  <%= link_to clinic.name, clinic_path(clinic) %>
-  <%= clinic.telephone %>
-  <%= clinic.hours %>
-  <%= clinic.address %>
-  <%= clinic.eng_op %>
-  <%= clinic.category %>
-  <%= clinic.website %>
-  <p>Latitude: <%= clinic.latitude %></p>
-  <p>Longitude: <%= clinic.longitude %></p>
-  <p><%= clinic.likes.count %> <%= (clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-
-  <hr>  
-  <br> 
-<% end %>
+<div class="flex-container">
+  <div class="search-container">
+    <%= render 'shared/search' %>
+  </div>
+  <div class="cards">
+    <h1>Search Results (Clinics#index)</h1>
+    <div class="card">
+      <% @clinics.each do |clinic| %>
+        <h2><%= link_to clinic.name, clinic_path(clinic) %></h2>
+        <p><%= clinic.category %></p>
+        <p><%= clinic.eng_op %></p>
+        <p><%= clinic.hours %><>
+        <p><%= clinic.address %></p>
+        <p><%= clinic.telephone %></p>
+        <p><%= clinic.website %></p>
+        <p>Latitude: <%= clinic.latitude %></p>
+        <p>Longitude: <%= clinic.longitude %></p>
+        <p><%= clinic.likes.count %> <%= (clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+        <hr>  
+        <br> 
+      <% end %>
+    </div>
+  </section>
+</div>
