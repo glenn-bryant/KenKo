@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <title>Kenko: Find English-Speaking Clinics in Tokyo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen:300" rel="stylesheet">
@@ -14,7 +14,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%#= render 'shared/navbar' %>
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
