@@ -1,4 +1,5 @@
 # KenKo
+<img src="https://github.com/glenn-bryant/KenKo/blob/master/kenko-screenshot.png" height="50%" width="50%">
 
 ## Table of contents
 * [General info](#general-info)
