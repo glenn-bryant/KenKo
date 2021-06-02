@@ -2,7 +2,6 @@ require "mapbox-sdk"
 Mapbox.access_token = "pk.eyJ1IjoiZ2dsZW5uODgiLCJhIjoiY2tuaGM5MDBzMHpqejJubndudTZ0Z2JtdCJ9.-qhIHeDpFXTkRntOn204uA"
 
 class ClinicsController < ApplicationController
-  acts_as_votable
   def index
     if params[:query].present?
       sql_query = "address ILIKE :query OR category ILIKE :query"
@@ -10,6 +9,12 @@ class ClinicsController < ApplicationController
     else
       @clinics = Clinic.all
     end
+  end
+
+  def upvote
+    @clinic = Clinic.find(params[:id])
+    @clinic.upvote_by current_user
+    render "vote.js.erb"
   end
 
   def show

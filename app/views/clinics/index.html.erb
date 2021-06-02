@@ -10,8 +10,8 @@
   <%= clinic.website %>
   <p>Latitude: <%= clinic.latitude %></p>
   <p>Longitude: <%= clinic.longitude %></p>
-  <p><%= clinic.likes.count %> <%= (clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-
+  <%#= clinic.likes.count %> <%#= (clinic.likes.count) == 1 ? 'Like' : 'Likes'%>
+  <td><%= render "clinics/upvote_link", post: clinic %></td>
   <hr>  
   <br> 
 <% end %>

@@ -10,4 +10,5 @@ class User < ApplicationRecord
 
   has_many :clinics
   has_many :likes, dependent: :destroy
+  acts_as_voter
 end

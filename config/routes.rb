@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :clinics, only: [:index, :show, :update, :destroy] do 
     resources :likes, only: [:new, :create]
+    member do
+      patch "upvote", to: "clinics#upvote"
+    end
   end
 
   resources :likes, only: [:destroy]

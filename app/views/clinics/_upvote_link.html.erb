@@ -1,0 +1,9 @@
+<%= content_tag "div", id: "upvote-#{clinic.id}" do %>
+  <%= link_to upvote_clinic_path(clinic), method: :patch, remote: true do%> 
+    <% if current_user.voted_up_on? clinic %>
+      unvote
+    <% else %>
+      vote!
+    <% end %>
+  <% end %> 
+<% end %>
