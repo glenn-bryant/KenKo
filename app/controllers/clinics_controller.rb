@@ -9,12 +9,22 @@ class ClinicsController < ApplicationController
     else
       @clinics = Clinic.all
     end
+
+    @markers = @clinics.geocoded.map do |clinic|
+      {
+        lat: clinic.latitude,
+        lng: clinic.longitude
+      }
+    end
   end
 
   def show
     @clinic = Clinic.find(params[:id])
     # if Rails.env.production?
-
+    @markers = {
+      lat: @clinic.latitude,
+      lng: @clinic.longitude
+    }
   end
 
 end
