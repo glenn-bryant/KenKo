@@ -1,11 +1,6 @@
 <%= render 'shared/search' %>
 <h1>Clinics#show</h1>
 <p>Find me in app/views/clinics/show.html.erb</p>
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
 <p>latitude: <%= @clinic.latitude %> </p>
 <p>longitude: <%= @clinic.longitude %> </p>
 
