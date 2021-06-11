@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :find_clinic
+  before_action :find_clinic, except: [:index]
   before_action :find_like, only: [:destroy]
 
   def create
@@ -9,6 +9,10 @@ class LikesController < ApplicationController
       @clinic.likes.create(user_id: current_user.id)
     end
     redirect_to clinic_path(@clinic)
+  end
+
+  def index
+    @likes = Like.all
   end
 
   def destroy
@@ -29,7 +33,7 @@ class LikesController < ApplicationController
   def find_clinic
     @clinic = Clinic.find(params[:clinic_id])
   end
-
+  
   def already_liked?
     Like.where(user_id: current_user.id, clinic_id:
     params[:clinic_id]).exists?

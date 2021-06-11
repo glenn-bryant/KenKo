@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:new, :create, :destroy]
   end
 
+  resources :likes, only: [:index]
   # resources :likes, only: [:destroy]
 
   root to: "pages#home"
