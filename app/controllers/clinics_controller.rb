@@ -21,10 +21,10 @@ class ClinicsController < ApplicationController
   def show
     @clinic = Clinic.find(params[:id])
     # if Rails.env.production?
-    @clinicmarkers = {
+    @clinicmarkers = [{
       lat: @clinic.latitude,
       lng: @clinic.longitude
-    }
+    }]
   end
 
 end
