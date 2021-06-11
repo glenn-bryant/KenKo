@@ -4,6 +4,12 @@
 <p>latitude: <%= @clinic.latitude %> </p>
 <p>longitude: <%= @clinic.longitude %> </p>
 
+<div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @clinicmarkers.to_json %>"
+      data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 
 <p><%= @clinic.likes.count %> <%= (@clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
