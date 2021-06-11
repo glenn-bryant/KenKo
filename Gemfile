@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 # gem 'dotenv-rails', groups: [:development, :test]
 gem 'bootstrap', '~> 4.0'
+gem 'dotenv-rails'
 gem 'geocoder'
 gem 'devise'
 gem 'httparty'

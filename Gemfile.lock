@@ -78,6 +78,10 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.0)
@@ -225,6 +229,7 @@ DEPENDENCIES
   bootstrap (~> 4.0)
   byebug
   devise
+  dotenv-rails
   geocoder
   httparty
   jbuilder (~> 2.7)

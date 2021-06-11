@@ -2,7 +2,8 @@ import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const buildMap = (mapElement) => {
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZ2dsZW5uODgiLCJhIjoiY2tuaGM5MDBzMHpqejJubndudTZ0Z2JtdCJ9.-qhIHeDpFXTkRntOn204uA';
+  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  console.log(mapElement.dataset);
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10'
