@@ -1,6 +1,6 @@
 <h1>likes test</h1>
-  <% if @likes.present? %>
-    <% @likes.each do |like| %>
+  <% if current_user.likes.present? %>
+    <% current_user.likes.each do |like| %>
       <%= like.clinic.name %>
     <% end %>
   <% else %>
