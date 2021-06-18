@@ -1,5 +1,5 @@
 require "mapbox-sdk"
-Mapbox.access_token = "pk.eyJ1IjoiZ2dsZW5uODgiLCJhIjoiY2tuaGM5MDBzMHpqejJubndudTZ0Z2JtdCJ9.-qhIHeDpFXTkRntOn204uA"
+Mapbox.access_token = ENV["MAPBOX_API_KEY"]
 
 class ClinicsController < ApplicationController
   

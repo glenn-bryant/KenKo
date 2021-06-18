@@ -9,7 +9,7 @@ require 'httparty'
 
 require "mapbox-sdk"
 
-Mapbox.access_token = "pk.eyJ1IjoiZ2dsZW5uODgiLCJhIjoiY2tuaGM5MDBzMHpqejJubndudTZ0Z2JtdCJ9.-qhIHeDpFXTkRntOn204uA"
+Mapbox.access_token = ENV["MAPBOX_API_KEY"]
 
 puts 'deleting database...'
 Clinic.destroy_all
@@ -39,7 +39,7 @@ puts 'user created!'
 # HTTParty.get("https://japan-clinic-api.herokuapp.com/api/v1/clinics", headers: {"Authorization" => "Token token=\"JBfLXceeM--sSsxgyzF-\""})
 
 headers = { 
-  "authentication_token" => "JBfLXceeM--sSsxgyzF-" 
+  "authentication_token" => ENV["JAPAN_CLINIC_API_KEY"].to_s
 }
 
 file = HTTParty.get('https://japan-clinic-api.herokuapp.com/api/v1/clinics', headers: headers)
