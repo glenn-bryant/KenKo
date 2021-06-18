@@ -1,36 +1,30 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  position: fixed;
+.navbar {
   display: flex;
+  flex-direction: row;
   left: 0;
+  overflow: hidden;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background: #f0f0f0;
   color: #2b2c28;
   border: 1px solid rgb(235,235,235);
-  padding: 2em;
-  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  justify-content: space-around;
+  padding-bottom: 0.5em;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-
-.avatar {
+.browse-icon {
   width: 40px;
   border-radius: 50%;
 }
 
-.navbar-lewagon-white {
-  background-color: white;
+.user-icon {
+  width: 40px;
+  border-radius: 50%;
 }
 
-.navbar-logo {
-  height: 40px;
-  object-fit: cover;
+.favorites-icon {
+  width: 40px;
+  border-radius: 50%;
 }
