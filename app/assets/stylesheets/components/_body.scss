@@ -1,24 +1,39 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.main {
+  margin-bottom: 30px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 15px;
+}
+
 h1 {
   color: $wintergreen-dream;
   font-family: 'Oxygen', sans-serif;
   font-weight: bold;
-  justify-content: center;
 }
 
 h1.home {
   font-size: 96px;
   font-weight: bold;
+  margin: 15px;
 }
 
 h2, h3, h4, h5, h6 {
   color: $wintergreen-dream;
   font-family: 'Oxygen', sans-serif;
-  hyphens: auto;
 }
 
 h2.home {
   color: $jet;
   font-size: 30px;
+  margin: 15px;
+  justify-content: center;
 }
 
 p {
@@ -47,25 +62,26 @@ a:active {
 body {
   background-color: $snow;
   box-sizing: border-box;
+  padding-bottom: 65px;
 }
 
 section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.top-container, .logo-container, .search-container {
+.top-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  flex-grow: 1;
-  margin: 0 auto;
-  justify-content: space-around;
 }
 
-.row {
-  width: 100%;
+.logo-container {
   display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
