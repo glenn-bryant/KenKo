@@ -1,8 +1,14 @@
-<h1>likes test</h1>
-  <% if current_user.likes.present? %>
-    <% current_user.likes.each do |like| %>
-      <%= like.clinic.name %>
+<h1>likes</h1>
+
+  <% if user_signed_in? %>
+    <% if current_user.likes.present? %>
+      <% current_user.likes.each do |like| %>
+        <%= like.clinic.name %>
+      <% end %>
+    <% else %>
+    <h1>No liked clinics!</h1>
     <% end %>
+
   <% else %>
-  <h1>No liked clinics!</h1>
+    <h1>Please sign in to use this feature.</h1>
   <% end %>
