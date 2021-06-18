@@ -2,7 +2,6 @@ require "mapbox-sdk"
 Mapbox.access_token = ENV["MAPBOX_API_KEY"]
 
 class ClinicsController < ApplicationController
-  
   def index
     if params[:query].present?
       sql_query = "address ILIKE :query OR category ILIKE :query"
@@ -10,7 +9,7 @@ class ClinicsController < ApplicationController
     else
       @clinics = policy_scope(Clinic).order(created_at: :desc)
     end
-    
+
     @markers = @clinics.geocoded.map do |clinic|
       {
         lat: clinic.latitude,
@@ -18,7 +17,7 @@ class ClinicsController < ApplicationController
       }
     end
   end
-  
+
   def show
     @clinic = Clinic.find(params[:id])
     authorize @clinic
@@ -28,5 +27,4 @@ class ClinicsController < ApplicationController
       lng: @clinic.longitude
     }]
   end
-
 end
