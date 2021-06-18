@@ -1,21 +1,12 @@
 <section id="section">
   <div class="top-container">
-    <div class="row">
       <h1 class="home">Kenko</h1>
-    </div>
-    <div class="row">
       <h2 class="home">Find English-speaking clinics in Tokyo</h2>
-    </div>
   </div>
   <div class="logo-container">
     <%= image_tag "kenko-logo.png", :alt => "Kenko logo of a smartphone", :width => 300 %>
   </div>
   <div class="search-container">
-    <div class="row">
-      <%= render 'shared/search' %>
-      <%#button id = "find-me">Show my location</button><br/>
-      <%#p id = "status"></p%>
-      <%#a id = "map-link" target="_blank"></a%> 
-    </div>
+    <%= render 'shared/search-bar' %>
   </div>
 </section>

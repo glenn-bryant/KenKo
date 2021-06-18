@@ -7,8 +7,11 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen:300" rel="stylesheet">
+    <!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Mapbox -->
     <%= stylesheet_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'map' %>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
@@ -17,12 +20,14 @@
     <%= favicon_link_tag %>
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%#= javascript_pack_tag 'application' %>
-    <%#= javascript_pack_tag 'init_mapbox' %>
+    <div class="main">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= render "shared/flashes" %>
+      <%= yield %>
+      <%#= javascript_pack_tag 'application' %>
+      <%#= javascript_pack_tag 'init_mapbox' %>
+    </div>
+    <%= render "shared/navbar" %>
   </body>
 </html>
