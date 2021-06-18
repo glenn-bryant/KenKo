@@ -4,15 +4,22 @@
 <p>latitude: <%= @clinic.latitude %> </p>
 <p>longitude: <%= @clinic.longitude %> </p>
 
-
-
-<p><%= @clinic.likes.count %> <%= (@clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-
+<% if user_signed_in? %>
 <% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
-<% if pre_like %>
-  <%= button_to 'Unlike', clinic_like_path(@clinic, pre_like), method: :delete %>
+  <p><%#= @clinic.likes.count %> <%= pre_like.present? ? 'liked' : 'not liked'%></p>
 <% else %>
-  <%= button_to 'Like', clinic_likes_path(@clinic), method: :post %>
+  <p>♡</p>
+<% end %>
+
+<% if user_signed_in? %>
+  <% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
+  <% if pre_like %>
+    <%= button_to 'Unlike', clinic_like_path(@clinic, pre_like), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', clinic_likes_path(@clinic), method: :post %>
+  <% end %>
+<% else %>
+  <h1>Please sign in to like this clinic</h1>
 <% end %>
 <div id="map"
       style="width: 100%; height: 600px;"

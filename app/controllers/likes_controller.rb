@@ -9,10 +9,12 @@ class LikesController < ApplicationController
       @clinic.likes.create(user_id: current_user.id)
     end
     redirect_to clinic_path(@clinic)
+
+    authorize @clinic.likes
   end
 
   def index
-    @likes = Like.all
+    @likes = policy_scope(Like).order(created_at: :desc)
   end
 
   def destroy
@@ -22,6 +24,7 @@ class LikesController < ApplicationController
       @like.destroy
     end
     redirect_to clinic_path(@clinic)
+    authorize @like
   end
 
   def find_like
