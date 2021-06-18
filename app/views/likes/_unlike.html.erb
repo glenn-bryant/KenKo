@@ -1,0 +1,2 @@
+<%# pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
+<%= button_to 'Unlike', clinic_like_path(@clinic, pre_like), method: :delete, remote: true %>

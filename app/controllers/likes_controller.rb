@@ -11,10 +11,16 @@ class LikesController < ApplicationController
     redirect_to clinic_path(@clinic)
 
     authorize @clinic.likes
+    respond_to do |format|
+      format.html { redirect_to clinic_path(@clinic) }
+      format.js
+      return
+    end
   end
 
   def index
     @likes = policy_scope(Like).order(created_at: :desc)
+
   end
 
   def destroy
