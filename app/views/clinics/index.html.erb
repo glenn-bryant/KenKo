@@ -3,10 +3,33 @@
   <div class="search-container">
     <%= render 'shared/search-bar' %>
   </div>
+
+  <div class="clinic-categories">
+    <h1>Select a Category</h1>
+    <button id="General_Hospital">General Hospital</button>
+    <hr>
+    <div id="Dental">Dental</div>
+    <hr>
+    <div id="Dermatology">Dermatology</div>
+    <hr>
+    <div id="Clinic">Clinic</div>
+    <hr>
+    <div id="Eye_doctor">Eye doctor</div>
+    <hr>
+    <div id="ent">ear nose throat doctor</div>
+    <hr>
+    <div id="pediatrics">pediatrics</div>
+    <hr>
+    <div id="plastic_surgery">plastic surgery</div>
+    <hr>
+    <div id="psychiatry">psychiatry</div>
+    <hr>
+    <div id="chiropractor">chiropractor</div>
+
+  </div>
   <div class="cards">
-    <h1>Search Results (Clinics#index)</h1>
-    <div class="card">
       <% @clinics.each do |clinic| %>
+        <div class="<%=clinic.category %> card" style="display: none;">
         <h2><%= link_to clinic.name, clinic_path(clinic) %></h2>
         <p><%= clinic.category %></p>
         <p><%= clinic.eng_op %></p>
@@ -19,11 +42,11 @@
         <p><%= clinic.likes.count %> <%= (clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
         <hr>  
         <br> 
+      </div>
       <% end %>
-    </div>
   </section>
   <div id="map"
-      style="width: 100%; height: 600px;"
+      style="width: 100%; height: 600px; display:none;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
