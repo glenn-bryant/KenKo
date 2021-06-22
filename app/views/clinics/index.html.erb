@@ -8,25 +8,30 @@
     <h1>Select a Category</h1>
     <button id="General_Hospital">General Hospital</button>
     <hr>
-    <div id="Dental">Dental</div>
+    <button id="Dental">Dental</button>
     <hr>
-    <div id="Dermatology">Dermatology</div>
+    <button id="Dermatology">Dermatology</button>
     <hr>
-    <div id="Clinic">Clinic</div>
+    <button id="Clinic">Clinic</button>
     <hr>
-    <div id="Eye_doctor">Eye doctor</div>
+    <button id="Eye_doctor">Eye doctor</button>
     <hr>
-    <div id="ent">ear nose throat doctor</div>
+    <button id="ent">ear nose throat doctor</button>
     <hr>
-    <div id="pediatrics">pediatrics</div>
+    <button id="pediatrics">pediatrics</button>
     <hr>
-    <div id="plastic_surgery">plastic surgery</div>
+    <button id="plastic_surgery">plastic surgery</button>
     <hr>
-    <div id="psychiatry">psychiatry</div>
+    <button id="psychiatry">psychiatry</button>
     <hr>
-    <div id="chiropractor">chiropractor</div>
+    <button id="chiropractor">chiropractor</button>
 
   </div>
+
+  <div id="return" style="display:none">
+    <button>Return to Categories</button>
+  </div>
+
   <div class="cards">
       <% @clinics.each do |clinic| %>
         <div class="<%=clinic.category %> card" style="display: none;">
@@ -45,10 +50,10 @@
       </div>
       <% end %>
   </section>
-  <div id="map"
-      style="width: 100%; height: 600px; display:none;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+</div>
+<div id="map"
+  style="width: 100%; height: 600px; display:none;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 

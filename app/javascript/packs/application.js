@@ -28,7 +28,7 @@ document.addEventListener('turbolinks:load', () => {
   //if (document.querySelector('#find-me').addEventListener('click', geoFindMe)) {
     //geoFindMe();
   //}
-  // if (document.querySelector('#General_Hospital')) {
-    //fade();
- // }
+  if (document.querySelector('#General_Hospital')) {
+  fade();
+  }
 }); 
