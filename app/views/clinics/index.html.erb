@@ -6,32 +6,36 @@
 
   <% unless params[:query].present? %>
     <div class="clinic-categories">
-      <h1>Select a Category</h1>
-      <button id="General_Hospital">General Hospital</button>
+      <h1>Select a Category</h1> 
+      <%= render 'shared/category', category: "General Hospital" %>
+
       <hr>
-      <button id="Dental">Dental</button>
+       <%= render 'shared/category', category: "Dental" %>
       <hr>
-      <button id="Dermatology">Dermatology</button>
+      <%= render 'shared/category', category: "Dermatology" %>
       <hr>
-      <button id="Clinic">Clinic</button>
+      <%= render 'shared/category', category: "Clinic" %>
       <hr>
-      <button id="Eye_doctor">Eye doctor</button>
+      <%= render 'shared/category', category: "Eye Doctor" %>
       <hr>
-      <button id="ent">ear nose throat doctor</button>
+      <%= render 'shared/category', category: "Ear nose throat" %>
       <hr>
-      <button id="pediatrics">pediatrics</button>
+      <%= render 'shared/category', category: "pediatrics" %>
       <hr>
-      <button id="plastic_surgery">plastic surgery</button>
+      <%= render 'shared/category', category: "plastic surgery" %>
       <hr>
-      <button id="psychiatry">psychiatry</button>
+      <%= render 'shared/category', category: "psychiatry" %>
       <hr>
-      <button id="chiropractor">chiropractor</button>
+      <%= render 'shared/category', category: "chiropractor" %>
     </div>
 
-    <div id="return" style="display:none">
-      <button>Return to Categories</button>
-    </div>
   <% end %>
+    
+  <% if params[:query].present? %>
+    <div id="return">
+      <button><%= link_to "back to clinics", clinics_path %></button>
+    </div>
+  <% end %>  
 
   <div class="cards">
       <% @clinics.each do |clinic| %>
@@ -46,11 +50,8 @@
         <p><%= clinic.hours %><>
         <p><%= clinic.address %></p>
         <p><%= clinic.telephone %></p>
-        <p><%= clinic.website %></p>
-        <p>Latitude: <%= clinic.latitude %></p>
-        <p>Longitude: <%= clinic.longitude %></p>
-        <p><%= clinic.likes.count %> <%= (clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-        <hr>  
+        <a href="<%= clinic.website %>" ><%= clinic.website %></a>
+        <hr>
         <br> 
       </div>
       <% end %>
