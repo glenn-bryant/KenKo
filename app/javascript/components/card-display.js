@@ -14,7 +14,8 @@ const fade = () => {
   const chiropractor = document.getElementById("chiropractor");
   const back = document.getElementById("return");
   const map = document.getElementById("map");
-  
+  const markers = JSON.parse(map.dataset.markers);
+
   back.addEventListener('click', (event) => {
     categories.style.display = "";
     const cards = document.querySelectorAll(".card");
@@ -26,6 +27,7 @@ const fade = () => {
   })
 
   generalHospital.addEventListener('click', (event) => {
+    console.log(markers);
     const hospitals = document.querySelectorAll(".General");
     categories.style.display = "none";
     map.style.display = "";
