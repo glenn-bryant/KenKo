@@ -13,6 +13,7 @@ const fade = () => {
   const psychiatry = document.getElementById("psychiatry");
   const chiropractor = document.getElementById("chiropractor");
   const back = document.getElementById("return");
+  const map = document.getElementById("map");
   
   back.addEventListener('click', (event) => {
     categories.style.display = "";
@@ -21,11 +22,11 @@ const fade = () => {
       card.style.display = "none";
     });
     back.style.display = "none";
+    map.style.display = "none";
   })
 
   generalHospital.addEventListener('click', (event) => {
     const hospitals = document.querySelectorAll(".General");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     hospitals.forEach((hospital) => {
@@ -36,7 +37,6 @@ const fade = () => {
 
   dental.addEventListener('click', (event) => {
     const dentists = document.querySelectorAll(".Dental");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     dentists.forEach((dentist) => {
@@ -47,7 +47,6 @@ const fade = () => {
 
   dermatology.addEventListener('click', (event) => {
     const dermatologists = document.querySelectorAll(".Dermatology");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     dermatologists.forEach((dermatologist) => {
@@ -58,7 +57,6 @@ const fade = () => {
 
   clinic.addEventListener('click', (event) => {
     const clinics = document.querySelectorAll(".Clinic");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     clinics.forEach((clinic) => {
@@ -69,7 +67,6 @@ const fade = () => {
 
   eyeDoctor.addEventListener('click', (event) => {
     const eyes = document.querySelectorAll(".Eye");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     eyes.forEach((eye) => {
@@ -80,7 +77,6 @@ const fade = () => {
 
   ent.addEventListener('click', (event) => {
     const ents = document.querySelectorAll(".ear");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     ents.forEach((ent) => {
@@ -91,7 +87,6 @@ const fade = () => {
 
   pediatrics.addEventListener('click', (event) => {
     const peds = document.querySelectorAll(".pediatrics");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     peds.forEach((ped) => {
@@ -102,7 +97,6 @@ const fade = () => {
 
   plasticSurgery.addEventListener('click', (event) => {
     const plastics = document.querySelectorAll(".plastic");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     plastics.forEach((plastic) => {
@@ -113,7 +107,6 @@ const fade = () => {
 
   psychiatry.addEventListener('click', (event) => {
     const psychiatrists = document.querySelectorAll(".psychiatry");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     psychiatrists.forEach((psychiatrist) => {
@@ -124,7 +117,6 @@ const fade = () => {
   
   chiropractor.addEventListener('click', (event) => {
     const chiropractors = document.querySelectorAll(".chiropractor");
-    const map = document.getElementById("map");
     categories.style.display = "none";
     map.style.display = "";
     chiropractors.forEach((chiropractor) => {
