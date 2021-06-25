@@ -1,11 +1,15 @@
-<%= render 'shared/search-bar' %>
+<div id="map"
+      style="width: 100%; height: 300px;"
+      data-markers="<%= @clinicmarkers.to_json %>"
+      data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 <h1><%= @clinic.name %></h1>
-<p>Category: <%= @clinic.category %></p>
-<p>English Operator: <%= @clinic.eng_op %></p>
-<p>Hours: <%= @clinic.hours %></p>
-<p>Address: <%= @clinic.address %></p>
-<p>Telephone: <%= @clinic.telephone %></p>
-<p>Website: <a href="<%= @clinic.website %>" ><%= @clinic.website %></a></p>
+<strong>Category: </strong><p><%= @clinic.category.capitalize %></p>
+<strong>English Operator: </strong><p><%= @clinic.eng_op %></p>
+<strong>Hours: </strong><p><%= @clinic.hours %></p>
+<strong>Address: </strong><p><%= @clinic.address %></p>
+<strong>Telephone: </strong><p><%= @clinic.telephone %></p>
+<strong>Website: </strong><p><a href="<%= @clinic.website %>" ><%= @clinic.website %></a></p>
 
 <% if user_signed_in? %>
 <% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
@@ -22,6 +26,5 @@
     <%= button_to 'Like', clinic_likes_path(@clinic), method: :post %>
   <% end %>
 <% else %>
-  <h1>Please sign in to like this clinic</h1>
+  <h3>Please sign in to like this clinic</h3>
 <% end %>
-<%= render 'shared/search-bar' %>
