@@ -47,7 +47,7 @@
         <h2><%= link_to clinic.name, clinic_path(clinic) %></h2>
         <p><%= clinic.category %></p>
         <p><%= clinic.eng_op %></p>
-        <p><%= clinic.hours %><>
+        <p><%= clinic.hours %>
         <p><%= clinic.address %></p>
         <p><%= clinic.telephone %></p>
         <a href="<%= clinic.website %>" ><%= clinic.website %></a>
@@ -57,17 +57,5 @@
       <% end %>
   </section>
 </div>
-<% if params[:query].present? %>
-  <div id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-<% else %>
-  <div id="map"
-    style="width: 100%; height: 600px; display:none;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-<% end %>
+<%= render 'shared/map' %>
 
