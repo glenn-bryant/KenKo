@@ -18,6 +18,7 @@ require("channels");
 
 //import { geoFindMe } from '../components/geolocator';
 import { initMapbox } from '../plugins/init_mapbox';
+import { fade } from '../components/card-display';
 
 
 
@@ -27,5 +28,7 @@ document.addEventListener('turbolinks:load', () => {
   //if (document.querySelector('#find-me').addEventListener('click', geoFindMe)) {
     //geoFindMe();
   //}
-
+  if (document.querySelector('#General_Hospital')) {
+  fade();
+  }
 }); 

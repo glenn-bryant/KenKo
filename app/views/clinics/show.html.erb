@@ -1,8 +1,11 @@
 <%= render 'shared/search-bar' %>
-<h1>Clinics#show</h1>
-<p>Find me in app/views/clinics/show.html.erb</p>
-<p>latitude: <%= @clinic.latitude %> </p>
-<p>longitude: <%= @clinic.longitude %> </p>
+<h1><%= @clinic.name %></h1>
+<p>Category: <%= @clinic.category %></p>
+<p>English Operator: <%= @clinic.eng_op %></p>
+<p>Hours: <%= @clinic.hours %></p>
+<p>Address: <%= @clinic.address %></p>
+<p>Telephone: <%= @clinic.telephone %></p>
+<p>Website: <a href="<%= @clinic.website %>" ><%= @clinic.website %></a></p>
 
 <% if user_signed_in? %>
 <% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>

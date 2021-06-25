@@ -3,29 +3,71 @@
   <div class="search-container">
     <%= render 'shared/search-bar' %>
   </div>
+
+  <% unless params[:query].present? %>
+    <div class="clinic-categories">
+      <h1>Select a Category</h1> 
+      <%= render 'shared/category', category: "General Hospital" %>
+
+      <hr>
+       <%= render 'shared/category', category: "Dental" %>
+      <hr>
+      <%= render 'shared/category', category: "Dermatology" %>
+      <hr>
+      <%= render 'shared/category', category: "Clinic" %>
+      <hr>
+      <%= render 'shared/category', category: "Eye Doctor" %>
+      <hr>
+      <%= render 'shared/category', category: "Ear nose throat" %>
+      <hr>
+      <%= render 'shared/category', category: "pediatrics" %>
+      <hr>
+      <%= render 'shared/category', category: "plastic surgery" %>
+      <hr>
+      <%= render 'shared/category', category: "psychiatry" %>
+      <hr>
+      <%= render 'shared/category', category: "chiropractor" %>
+    </div>
+
+  <% end %>
+    
+  <% if params[:query].present? %>
+    <div id="return">
+      <button><%= link_to "back to clinics", clinics_path %></button>
+    </div>
+  <% end %>  
+
   <div class="cards">
-    <h1>Search Results (Clinics#index)</h1>
-    <div class="card">
       <% @clinics.each do |clinic| %>
+        <% if params[:query].present? %>
+          <div class="<%=clinic.category %> card">
+        <% else %>
+          <div class="<%=clinic.category %> card" style="display: none;">
+        <% end %>
         <h2><%= link_to clinic.name, clinic_path(clinic) %></h2>
         <p><%= clinic.category %></p>
         <p><%= clinic.eng_op %></p>
         <p><%= clinic.hours %><>
         <p><%= clinic.address %></p>
         <p><%= clinic.telephone %></p>
-        <p><%= clinic.website %></p>
-        <p>Latitude: <%= clinic.latitude %></p>
-        <p>Longitude: <%= clinic.longitude %></p>
-        <p><%= clinic.likes.count %> <%= (clinic.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-        <hr>  
+        <a href="<%= clinic.website %>" ><%= clinic.website %></a>
+        <hr>
         <br> 
+      </div>
       <% end %>
-    </div>
   </section>
-  <div id="map"
-      style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
 </div>
+<% if params[:query].present? %>
+  <div id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<% else %>
+  <div id="map"
+    style="width: 100%; height: 600px; display:none;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<% end %>
 
