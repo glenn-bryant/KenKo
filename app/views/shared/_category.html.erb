@@ -1,4 +1,4 @@
-<div className="search-bar">
+<div className="">
   <%= form_tag clinics_path, method: :get do %>
     <%= hidden_field_tag :query,
     params[:query],
@@ -6,6 +6,6 @@
     placeholder: "Find by name or location",
     value: category
     %>
-    <%= submit_tag category, class: "search-button" %>
+    <%= submit_tag category, class: "category-button" %>
   <% end %>
 </div>
