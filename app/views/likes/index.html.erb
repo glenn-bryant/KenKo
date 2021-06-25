@@ -4,11 +4,18 @@
     <% if current_user.likes.present? %>
       <% current_user.likes.each do |like| %>
         <%= like.clinic.name %>
+        <h1><%= link_to like.clinic.name, clinic_path(like.clinic) %></h1>
+        <p>Category: <%= like.clinic.category %></p>
+        <p>English Operator: <%= like.clinic.eng_op %></p>
+        <p>Hours: <%= like.clinic.hours %></p>
+        <p>Address: <%= like.clinic.address %></p>
+        <p>Telephone: <%= like.clinic.telephone %></p>
+        <p>Website: <a href="<%= like.clinic.website %>" ><%= like.clinic.website %></a></p>
       <% end %>
     <% else %>
-    <h1>No liked clinics!</h1>
+    <h1>No clinics liked yet. <%= link_to "Search for clinics.", clinics_path %></h1>
     <% end %>
 
   <% else %>
-    <h1>Please sign in to use this feature.</h1>
+    <h1><%= link_to "Please sign in to use this feature.", new_user_session_path %></h1>
   <% end %>
