@@ -49,10 +49,11 @@ p {
 a {
   text-decoration: none;
   font-weight: bold;
+  color: $wintergreen-dream;
 }
 
 a:hover {
-  color: blue;
+  color: $darker-blue-green;
 }
 
 a:active {

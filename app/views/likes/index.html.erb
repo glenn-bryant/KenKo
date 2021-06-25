@@ -1,20 +1,20 @@
-<h1>Favorite Clinics</h1>
-  <% if user_signed_in? %>
-    <% if current_user.likes.present? %>
-      <% current_user.likes.each do |like| %>
-        <%= like.clinic.name %>
-        <h1><%= link_to like.clinic.name, clinic_path(like.clinic) %></h1>
-        <p>Category: <%= like.clinic.category %></p>
-        <p>English Operator: <%= like.clinic.eng_op %></p>
-        <p>Hours: <%= like.clinic.hours %></p>
-        <p>Address: <%= like.clinic.address %></p>
-        <p>Telephone: <%= like.clinic.telephone %></p>
-        <p>Website: <a href="<%= like.clinic.website %>" ><%= like.clinic.website %></a></p>
+<div class="page-container">
+  <h2>Favorite Clinics</h2>
+    <% if user_signed_in? %>
+      <% if current_user.likes.present? %>
+        <% current_user.likes.each do |like| %>
+          <h2><%= link_to like.clinic.name, clinic_path(like.clinic) %></h2>
+          <p>Category: <%= like.clinic.category %></p>
+          <p>English Operator: <%= like.clinic.eng_op %></p>
+          <p>Hours: <%= like.clinic.hours %></p>
+          <p>Address: <%= like.clinic.address %></p>
+          <p>Telephone: <%= like.clinic.telephone %></p>
+          <p>Website: <a href="<%= like.clinic.website %>" ><%= like.clinic.website %></a></p>
+        <% end %>
+      <% else %>
+        <h1>No clinics liked yet. <%= link_to "Search for clinics.", clinics_path %></h1>
       <% end %>
     <% else %>
-    <h1>No clinics liked yet. <%= link_to "Search for clinics.", clinics_path %></h1>
+      <h3><%= link_to "Please sign in to use this feature.", new_user_session_path %></h3>
     <% end %>
-
-  <% else %>
-    <h3><%= link_to "Please sign in to use this feature.", new_user_session_path %></h3>
-  <% end %>
+</div>
