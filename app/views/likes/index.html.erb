@@ -1,5 +1,4 @@
-<h1>likes</h1>
-
+<h1>Favorite Clinics</h1>
   <% if user_signed_in? %>
     <% if current_user.likes.present? %>
       <% current_user.likes.each do |like| %>
@@ -17,5 +16,5 @@
     <% end %>
 
   <% else %>
-    <h1><%= link_to "Please sign in to use this feature.", new_user_session_path %></h1>
+    <h3><%= link_to "Please sign in to use this feature.", new_user_session_path %></h3>
   <% end %>
