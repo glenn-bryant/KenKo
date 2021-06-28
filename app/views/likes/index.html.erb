@@ -6,7 +6,7 @@
           <% current_user.likes.each do |like| %>
             <div class="card">
               <h2><%= link_to like.clinic.name, clinic_path(like.clinic) %></h2>
-              <p><strong><%= like.clinic.category.capitalize %></strong></p>
+              <p class="category-color"><strong><%= like.clinic.category.capitalize %></strong></p>
               <p><strong>English Operator: </strong><%= like.clinic.eng_op %></p>
               <p><strong>Hours: </strong><%= like.clinic.hours %></p>
               <p><strong>Address: </strong><%= like.clinic.address %></p>
