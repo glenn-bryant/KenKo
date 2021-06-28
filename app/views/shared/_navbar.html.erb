@@ -1,10 +1,10 @@
 <div class="navbar">
   <% if user_signed_in? %>
     <h3><%= link_to "Browse", clinics_path%></h3>
-    <h3><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></h3>
+    <h3><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %></h3>
     <h3><%= link_to "Favorites", likes_path %></h3>
   <% else %>
     <h3><%= link_to "Browse", clinics_path%></h3>
-    <h3><%= link_to "Login", new_user_session_path, class: "nav-link" %></h3>
+    <h3><%= link_to "Log In", new_user_session_path, class: "nav-link" %></h3>
   <% end %>
 </div>

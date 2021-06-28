@@ -2,8 +2,8 @@
   <%= form_tag clinics_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
-    class: "search form-control",
-    placeholder: "Find by name or location"
+    class: "search-input",
+    placeholder: "Clinic name or location"
     %>
     <%= submit_tag "Search", class: "search-button" %>
   <% end %>
