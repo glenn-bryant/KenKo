@@ -34,7 +34,7 @@
   <div class="button-container">
     <% if params[:query].present? %>
       <div id="return">
-        <button><%= link_to "Back to Clinics", clinics_path, class: "search-button" %></button>
+        <button><%= link_to "Top Categories", clinics_path, class: "search-button" %></button>
       </div>
     <% end %>  
   </div>
@@ -46,7 +46,7 @@
         <div class="<%=clinic.category %> card" style="display: none;">
       <% end %>
         <h2><%= link_to clinic.name, clinic_path(clinic) %></h2>
-        <p><strong><%= clinic.category.capitalize %></strong></p>
+        <p class="category-color"><strong><%= clinic.category.capitalize %></strong></p>
         <p><strong>English Operator:</strong> <%= clinic.eng_op %></p>
         <p><strong>Hours: </strong><%= clinic.hours %></p>
         <p><strong>Address: </strong><%= clinic.address %></p>
