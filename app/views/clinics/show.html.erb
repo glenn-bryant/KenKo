@@ -1,4 +1,7 @@
 <div class="flex-container">
+  <div class="search-container">
+    <%= render 'shared/search-bar' %>
+  </div>
   <div id="map"
         style="width: 100%; height: 300px; border-radius: 15px;"
         data-markers="<%= @clinicmarkers.to_json %>"
