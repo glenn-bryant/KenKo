@@ -1,0 +1,31 @@
+.clinic-categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.category-button {
+  font-weight: bold;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background: $darker-blue-green;
+  color: $snow;
+  border: none;
+  padding: 5px;
+  margin: 15px;
+  cursor: pointer;
+  text-align: center;
+  width: 90%; 
+  height: 100px;
+  place-self: center;
+  white-space: normal;
+}

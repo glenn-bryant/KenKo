@@ -18,16 +18,17 @@
   <% unless params[:query].present? %>
     <div class="clinic-categories">
       <h2>Top Categories</h2> 
+      <div class="category-container">
       <%= render 'shared/category', category: "General Hospital" %>
       <%= render 'shared/category', category: "Dental" %>
       <%= render 'shared/category', category: "Dermatology" %>
       <%= render 'shared/category', category: "Clinic" %>
       <%= render 'shared/category', category: "Eye Doctor" %>
-      <%= render 'shared/category', category: "Ear nose throat" %>
-      <%= render 'shared/category', category: "pediatrics" %>
-      <%= render 'shared/category', category: "plastic surgery" %>
-      <%= render 'shared/category', category: "psychiatry" %>
-      <%= render 'shared/category', category: "chiropractor" %>
+      <%= render 'shared/category', category: "Ear Nose Throat" %>
+      <%= render 'shared/category', category: "Pediatrics" %>
+      <%= render 'shared/category', category: "Plastic Surgery" %>
+      <%= render 'shared/category', category: "Psychiatry" %>
+      <%= render 'shared/category', category: "Chiropractor" %>
     </div>
   <% end %>
   <div class="button-container">
