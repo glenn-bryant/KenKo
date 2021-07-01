@@ -1,10 +1,25 @@
 <div class="navbar">
   <% if user_signed_in? %>
-    <h3><%= link_to "Browse", clinics_path%></h3>
-    <h3><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %></h3>
-    <h3><%= link_to "Favorites", likes_path %></h3>
+    <div class="browse-icon">
+      <h3><%= link_to ('<i class="fas fa-search"></i>').html_safe, clinics_path, class: "nav-link" %></h3>
+      <h5>Browse</h5>
+    </div>
+    <div class="user-icon">
+      <h3><%= link_to ('<i class="fas fa-user"></i>').html_safe, destroy_user_session_path, method: :delete, class: "nav-link" %></h3>
+      <h5>Log Out</h5>
+    </div>
+    <div class="favorites-icon">
+      <h3><%= link_to ('<i class="far fa-heart"></i>').html_safe, likes_path, class: "nav-link" %></h3>
+      <h5>Favorites</h5>
+    </div>
   <% else %>
-    <h3><%= link_to "Browse", clinics_path%></h3>
-    <h3><%= link_to "Log In", new_user_session_path, class: "nav-link" %></h3>
+    <div class="browse-icon">
+      <h3><%= link_to ('<i class="fas fa-search"></i>').html_safe, clinics_path, class: "nav-link" %></h3>
+      <h5>Browse</h5>
+    </div>
+    <div class="favorites-icon">
+      <h3><%= link_to ('<i class="fas fa-user"></i>').html_safe, new_user_session_path, class: "nav-link" %></h3>
+      <h5>Log In</h5>
+    </div>
   <% end %>
 </div>

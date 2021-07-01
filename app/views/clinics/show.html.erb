@@ -8,24 +8,26 @@
         data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <div class="card">
-  <h2><%= @clinic.name %></h2>
-  <p class="category-color"><strong></strong><%= @clinic.category.capitalize %></p>
-  <p><strong>English Operator: </strong><%= @clinic.eng_op %></p>
-  <p><strong>Hours: </strong><%= @clinic.hours %></p>
-  <p><strong>Address: </strong><%= @clinic.address %></p>
-  <p><strong>Phone: </strong><%= @clinic.telephone %></p>
-  <a href="<%= @clinic.website %>" target="_blank"><%= @clinic.website %></a>
-<br>
-
-  <% if user_signed_in? %>
-    <% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
-    <% if pre_like %>
-      <%= link_to ('<i class="fas fa-heart"></i>').html_safe, clinic_like_path(@clinic, pre_like), method: :delete %>
-    <% else %>
-      <%= link_to ('<i class="far fa-heart"></i>').html_safe, clinic_likes_path(@clinic), method: :post %>
-    <% end %>
-  <% else %>
-    <h3>Log in to like this clinic.</h3>
-  <% end %>
+    <div id='heart-icon'>
+      <% if user_signed_in? %>
+        <% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
+        <% if pre_like %>
+          <%= link_to ('<i class="fas fa-heart"></i>').html_safe, clinic_like_path(@clinic, pre_like), method: :delete %>
+        <% else %>
+          <%= link_to ('<i class="far fa-heart"></i>').html_safe, clinic_likes_path(@clinic), method: :post %>
+        <% end %>
+    </div>
+    <br>
+      <% else %>
+        <h3>Log in to like this clinic.</h3>
+      <% end %>
+    <h2><%= @clinic.name %></h2>
+    <p class="category-color"><strong></strong><%= @clinic.category.capitalize %></p>
+    <p><strong>English Operator: </strong><%= @clinic.eng_op %></p>
+    <p><strong>Hours: </strong><%= @clinic.hours %></p>
+    <p><strong>Address: </strong><%= @clinic.address %></p>
+    <p><strong>Phone: </strong><%= @clinic.telephone %></p>
+    <a href="<%= @clinic.website %>" target="_blank"><%= @clinic.website %></a>
+    <br>
   </div>
 </div>
