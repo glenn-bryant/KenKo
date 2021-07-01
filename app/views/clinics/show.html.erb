@@ -15,19 +15,14 @@
   <p><strong>Address: </strong><%= @clinic.address %></p>
   <p><strong>Phone: </strong><%= @clinic.telephone %></p>
   <a href="<%= @clinic.website %>" target="_blank"><%= @clinic.website %></a>
-  <% if user_signed_in? %>
-  <% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
-    <p><%#= @clinic.likes.count %> <%= pre_like.present? ? 'liked' : 'not liked'%></p>
-  <% else %>
-    <p>♡</p>
-  <% end %>
+<br>
 
   <% if user_signed_in? %>
     <% pre_like = @clinic.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
-      <%= button_to 'Unlike', clinic_like_path(@clinic, pre_like), method: :delete %>
+      <%= link_to ('<i class="fas fa-heart"></i>').html_safe, clinic_like_path(@clinic, pre_like), method: :delete %>
     <% else %>
-      <%= button_to 'Like', clinic_likes_path(@clinic), method: :post %>
+      <%= link_to ('<i class="far fa-heart"></i>').html_safe, clinic_likes_path(@clinic), method: :post %>
     <% end %>
   <% else %>
     <h3>Log in to like this clinic.</h3>
