@@ -20,7 +20,16 @@
   margin: 15px;
   background: #ffffff;
   padding: 15px;
+  position: relative;
+  #heart-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 5px;
+  }
 }
+
+
 
 @media screen and (min-width: 40em) {
   .cards {

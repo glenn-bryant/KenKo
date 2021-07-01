@@ -12,19 +12,52 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   justify-content: space-around;
   padding-bottom: 0.5em;
+  h5 {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: $wintergreen-dream;
+  }
+  a:hover {
+    color: $darker-blue-green;
+  }
+  a:active {
+    color: lightblue;
+  }
+  .fas {
+    color: $wintergreen-dream;
+    font-size: 25px;
+  }
+  .far {
+    color: $wintergreen-dream;
+    font-size: 25px;
+  }
+  .fas:hover {
+    color: $darker-blue-green;
+  }
 }
 
 .browse-icon {
-  width: 40px;
-  border-radius: 50%;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  padding: 0 15px;
+  text-align: center;
 }
 
 .user-icon {
-  width: 40px;
-  border-radius: 50%;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  padding: 0 15px;
+  text-align: center;
 }
 
 .favorites-icon {
-  width: 40px;
-  border-radius: 50%;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  padding: 0 15px;
+  text-align: center;
 }
